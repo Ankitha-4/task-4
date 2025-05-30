@@ -1,0 +1,51 @@
+*On Windows Firewall:
+Open Windows Defender Firewall → Advanced Settings.
+
+Navigate to Inbound Rules → Click New Rule.
+
+Select Port, choose TCP, and enter 23.
+
+Select “Block the connection”, apply to all profiles.
+
+Name the rule (e.g., “Block Telnet”) and finish.
+
+Test using telnet 127.0.0.1 23 → Connection should fail.
+
+To restore settings, delete the rule from Inbound Rules.
+
+*How Firewalls Filter Traffic:
+1. Rule-Based Filtering
+Firewalls use rules that define which traffic is allowed or blocked.
+
+Rules are based on:
+
+IP address (source/destination)
+
+Port number (e.g., 80 for HTTP, 22 for SSH)
+
+Protocol (TCP, UDP, ICMP)
+
+Direction (inbound or outbound)
+
+2. Packet Inspection
+Firewalls examine headers and payloads of data packets.
+
+Simple firewalls perform stateless filtering (checks each packet independently).
+
+Advanced firewalls use stateful inspection to track ongoing connections.
+
+3. Traffic Direction
+Inbound rules control traffic coming into the system.
+
+Outbound rules control traffic leaving the system.
+
+4. Default Policy (Implicit Rules)
+Most firewalls have a default deny or default allow policy.
+
+Example: Block all inbound traffic unless explicitly allowed.
+
+5. Logging and Alerts
+Firewalls can log dropped or allowed traffic.
+
+Helps with auditing and detecting suspicious activities.
+
